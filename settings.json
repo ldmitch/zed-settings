@@ -1,0 +1,79 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3-7-sonnet"
+    },
+    "default_width": 450,
+    "dock": "left",
+    "version": "2"
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_size": 13,
+  "collaboration_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "indent_guides": {
+    "coloring": "indent_aware"
+  },
+  "languages": {
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    }
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "preview_tabs": {
+    "enabled": false
+  },
+  "project_panel": {
+    "default_width": 320,
+    "dock": "right"
+  },
+  "tabs": {
+    "activate_on_close": "left_neighbour",
+    "file_icons": true,
+    "git_status": true,
+    "show_close_button": "always"
+  },
+  "tab_size": 2,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "terminal": {
+    "dock": "right"
+  },
+  "theme": {
+    "dark": "Gruvbox Dark Soft",
+    "light": "One Light",
+    "mode": "system"
+  },
+  "unnecessary_code_fade": 0.5,
+  "use_autoclose": true,
+  "use_smartcase_search": true, // Enables case-sensitive search if the search query contains an uppercase letter
+  "wrap_guides": [80, 120]
+}
