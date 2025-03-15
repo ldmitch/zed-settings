@@ -18,7 +18,7 @@
   {
     "context": "Editor",
     "bindings": {
-      // "alt-up": "editor::MoveLineUp",
+      "cmd-shift-g": "git_panel::ToggleFocus"
     }
   }
 ]
