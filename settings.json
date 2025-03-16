@@ -31,6 +31,39 @@
   "indent_guides": {
     "coloring": "indent_aware"
   },
+  "language_models": {
+    "openai": {
+      "api_url": "https://api.venice.ai/api/v1",
+      "available_models": [
+        {
+          "name": "deepseek-r1-671b",
+          "display_name": "DeepSeek R1 (671b)",
+          "max_tokens": 131072
+        },
+        {
+          "name": "llama-3.3-70b",
+          "display_name": "Llama 3.3 (70b)",
+          "max_tokens": 65536
+        },
+        {
+          "name": "qwen-2.5-coder-32b",
+          "display_name": "Qwen 2.5 Coder (32b)",
+          "max_tokens": 32768
+        },
+        {
+          "name": "qwen-2.5-qwq-32b",
+          "display_name": "Qwen 2.5 QwQ (32b)",
+          "max_tokens": 32768
+        },
+        {
+          "name": "qwen-2.5-vl",
+          "display_name": "Qwen 2.5 VL",
+          "max_tokens": 32768
+        }
+      ],
+      "version": "1"
+    }
+  },
   "languages": {
     "TSX": {
       "code_actions_on_format": {
@@ -53,6 +86,20 @@
     "default_width": 320,
     "dock": "right"
   },
+  "ssh_connections": [
+    {
+      "host": "fedora-server",
+      "username": "ldmitch",
+      "projects": [
+        {
+          "paths": ["~/projects"]
+        },
+        {
+          "paths": ["~/projects/cloud-rss"]
+        }
+      ]
+    }
+  ],
   "tabs": {
     "activate_on_close": "left_neighbour",
     "file_icons": true,
