@@ -91,12 +91,14 @@
     {
       "host": "fedora-server",
       "username": "ldmitch",
+      "port_forwards": [
+        { "local_port": 1313, "remote_port": 1313 },
+        { "local_port": 8787, "remote_port": 8787 },
+        { "local_port": 8788, "remote_port": 8788 }
+      ],
       "projects": [
         {
           "paths": ["~/projects"]
-        },
-        {
-          "paths": ["~/projects/cloud-rss"]
         }
       ]
     }
