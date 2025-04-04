@@ -7,10 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
   "assistant": {
+    "default_profile": "code-writer",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "model": "claude-3.7-sonnet-thought"
     },
     "default_width": 450,
     "dock": "left",
@@ -30,39 +39,6 @@
   },
   "indent_guides": {
     "coloring": "indent_aware"
-  },
-  "language_models": {
-    "openai": {
-      "api_url": "https://api.venice.ai/api/v1",
-      "available_models": [
-        {
-          "name": "deepseek-r1-671b",
-          "display_name": "DeepSeek R1 (671b)",
-          "max_tokens": 131072
-        },
-        {
-          "name": "llama-3.3-70b",
-          "display_name": "Llama 3.3 (70b)",
-          "max_tokens": 65536
-        },
-        {
-          "name": "qwen-2.5-coder-32b",
-          "display_name": "Qwen 2.5 Coder (32b)",
-          "max_tokens": 32768
-        },
-        {
-          "name": "qwen-2.5-qwq-32b",
-          "display_name": "Qwen 2.5 QwQ (32b)",
-          "max_tokens": 32768
-        },
-        {
-          "name": "qwen-2.5-vl",
-          "display_name": "Qwen 2.5 VL",
-          "max_tokens": 32768
-        }
-      ],
-      "version": "1"
-    }
   },
   "languages": {
     "TSX": {
@@ -86,19 +62,36 @@
     "default_width": 320,
     "dock": "right"
   },
-  "proxy": "socks5h://127.0.0.1:40000",
   "ssh_connections": [
     {
       "host": "fedora-server",
       "username": "ldmitch",
-      "port_forwards": [
-        { "local_port": 1313, "remote_port": 1313 },
-        { "local_port": 8787, "remote_port": 8787 },
-        { "local_port": 8788, "remote_port": 8788 }
-      ],
       "projects": [
         {
           "paths": ["~/projects"]
+        },
+        {
+          "paths": ["~/projects/cloud-rss"]
+        },
+        {
+          "paths": ["~/projects/cloud-rss-worker"]
+        },
+        {
+          "paths": ["~/projects/ldmitch.dev"]
+        }
+      ],
+      "port_forwards": [
+        {
+          "local_port": 1313,
+          "remote_port": 1313
+        },
+        {
+          "local_port": 8787,
+          "remote_port": 8787
+        },
+        {
+          "local_port": 8788,
+          "remote_port": 8788
         }
       ]
     }
