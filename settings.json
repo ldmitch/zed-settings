@@ -41,6 +41,9 @@
     "coloring": "indent_aware"
   },
   "languages": {
+    "Markdown": {
+      "show_edit_predictions": false
+    },
     "TSX": {
       "code_actions_on_format": {
         "source.organizeImports": true
