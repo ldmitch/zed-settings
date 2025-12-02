@@ -7,119 +7,135 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "mode": "subtle",
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null
-    },
-    "enabled_in_assistant": false
-  },
-  "assistant": {
-    "default_profile": "code-writer",
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet-thought"
-    },
-    "default_width": 450,
-    "dock": "left",
-    "version": "2"
-  },
-  "autosave": "on_focus_change",
-  "buffer_font_size": 13,
-  "collaboration_panel": {
-    "button": false,
-    "dock": "right"
+  "language_models": {
+    "openai_compatible": {
+      "Venice": {
+        "api_url": "https://api.venice.ai/api/v1",
+        "available_models": [
+          {
+            "name": "grok-41-fast",
+            "max_tokens": 262144,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          },
+          {
+            "name": "gemini-3-pro-preview",
+            "max_tokens": 202752,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          },
+          {
+            "name": "kimi-k2-thinking",
+            "max_tokens": 262144,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          },
+          {
+            "name": "zai-org-glm-4.6",
+            "max_tokens": 202752,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          }
+        ]
+      }
+    }
   },
   "features": {
     "edit_prediction_provider": "copilot"
   },
+  "calls": {
+    "mute_on_join": true
+  },
+  "agent": {
+    "default_profile": "minimal",
+    "default_model": {
+      "provider": "Venice",
+      "model": "gemini-3-pro-preview"
+    },
+    "play_sound_when_agent_done": true,
+    "enable_feedback": false,
+    "default_height": 350.0,
+    "dock": "left",
+    "model_parameters": []
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "default_width": 360.0,
+    "dock": "right"
+  },
   "git_panel": {
     "dock": "right"
   },
-  "indent_guides": {
-    "coloring": "indent_aware"
-  },
-  "languages": {
-    "Markdown": {
-      "show_edit_predictions": false
-    },
-    "TSX": {
-      "code_actions_on_format": {
-        "source.organizeImports": true
-      }
-    },
-    "TypeScript": {
-      "code_actions_on_format": {
-        "source.organizeImports": true
-      }
-    }
-  },
   "outline_panel": {
+    "dock": "right",
     "button": false
   },
-  "preview_tabs": {
-    "enabled": false
-  },
   "project_panel": {
-    "default_width": 320,
+    "entry_spacing": "standard",
+    "default_width": 360.0,
     "dock": "right"
   },
-  "ssh_connections": [
-    {
-      "host": "fedora-server",
-      "username": "ldmitch",
-      "projects": [
-        {
-          "paths": ["~/projects"]
-        },
-        {
-          "paths": ["~/projects/cloud-rss"]
-        },
-        {
-          "paths": ["~/projects/cloud-rss-worker"]
-        },
-        {
-          "paths": ["~/projects/ldmitch.dev"]
-        }
-      ],
-      "port_forwards": [
-        {
-          "local_port": 1313,
-          "remote_port": 1313
-        },
-        {
-          "local_port": 8787,
-          "remote_port": 8787
-        },
-        {
-          "local_port": 8788,
-          "remote_port": 8788
-        }
-      ]
-    }
-  ],
-  "tabs": {
-    "activate_on_close": "left_neighbour",
-    "file_icons": true,
-    "git_status": true,
-    "show_close_button": "always"
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.5
   },
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "title_bar": {
+    "show_menus": true,
+    "show_branch_icon": true
+  },
+  "use_smartcase_search": false,
+  "inlay_hints": {
+    "enabled": true
+  },
+  "indent_guides": {
+    "active_line_width": 3,
+    "line_width": 1
+  },
+  "preferred_line_length": 100,
+  "soft_wrap": "preferred_line_length",
   "tab_size": 2,
+  "gutter": {
+    "min_line_number_digits": 5
+  },
+  "autosave": "on_focus_change",
+  "buffer_line_height": "standard",
+  "icon_theme": "Zed (Default)",
+  "restore_on_startup": "none",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "terminal": {
-    "dock": "right"
-  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
   "theme": {
-    "dark": "Gruvbox Dark Soft",
-    "light": "One Light",
-    "mode": "system"
-  },
-  "unnecessary_code_fade": 0.5,
-  "use_autoclose": true,
-  "use_smartcase_search": true, // Enables case-sensitive search if the search query contains an uppercase letter
-  "wrap_guides": [80, 120]
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
+  }
 }
