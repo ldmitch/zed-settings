@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // ------------------------------------------------------
+  // AI
+  // ------------------------------------------------------
   "language_models": {
     "openai_compatible": {
       "Venice": {
@@ -56,46 +59,74 @@
       }
     }
   },
-  "features": {
-    "edit_prediction_provider": "copilot"
-  },
-  "calls": {
-    "mute_on_join": true
-  },
   "agent": {
     "default_profile": "minimal",
     "default_model": {
       "provider": "Venice",
       "model": "gemini-3-pro-preview"
     },
-    "play_sound_when_agent_done": true,
-    "enable_feedback": false,
-    "default_height": 350.0,
     "dock": "left",
-    "model_parameters": []
+    "play_sound_when_agent_done": true,
+    "enable_feedback": false
   },
-  "collaboration_panel": {
-    "button": false
+  "features": {
+    "edit_prediction_provider": "copilot"
   },
-  "notification_panel": {
-    "default_width": 360.0,
-    "dock": "right"
+
+  // ------------------------------------------------------
+  // Appearance & theme
+  // ------------------------------------------------------
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
   },
-  "git_panel": {
-    "dock": "right"
-  },
-  "outline_panel": {
-    "dock": "right",
-    "button": false
-  },
-  "project_panel": {
-    "entry_spacing": "standard",
-    "default_width": 360.0,
-    "dock": "right"
-  },
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_line_height": "standard",
   "active_pane_modifiers": {
     "inactive_opacity": 0.5
   },
+
+  // ------------------------------------------------------
+  // Editor behavior & visuals
+  // ------------------------------------------------------
+  "tab_size": 2,
+  "preferred_line_length": 100,
+  "soft_wrap": "preferred_line_length",
+  "use_smartcase_search": false,
+  "auto_signature_help": true,
+  "restore_on_startup": "none",
+  "indent_guides": {
+    "active_line_width": 3,
+    "line_width": 1
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "gutter": {
+    "min_line_number_digits": 5
+  },
+  "scrollbar": {
+    "show": "auto",
+    "cursors": true,
+    "git_diff": true,
+    "search_results": true,
+    "diagnostics": "all"
+  },
+
+  // ------------------------------------------------------
+  // Formatting & saving
+  // ------------------------------------------------------
+  "autosave": "on_focus_change",
+  "format_on_save": "on",
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+
+  // ------------------------------------------------------
+  // Panels & layout
+  // ------------------------------------------------------
   "bottom_dock_layout": "contained",
   "tabs": {
     "file_icons": true,
@@ -109,33 +140,34 @@
     "show_menus": true,
     "show_branch_icon": true
   },
-  "use_smartcase_search": false,
-  "inlay_hints": {
-    "enabled": true
+  "project_panel": {
+    "entry_spacing": "standard",
+    "default_width": 300.0,
+    "dock": "right"
   },
-  "indent_guides": {
-    "active_line_width": 3,
-    "line_width": 1
+  "outline_panel": {
+    "dock": "right",
+    "button": false
   },
-  "preferred_line_length": 100,
-  "soft_wrap": "preferred_line_length",
-  "tab_size": 2,
-  "gutter": {
-    "min_line_number_digits": 5
+  "notification_panel": {
+    "default_width": 300.0,
+    "dock": "right"
   },
-  "autosave": "on_focus_change",
-  "buffer_line_height": "standard",
-  "icon_theme": "Zed (Default)",
-  "restore_on_startup": "none",
+  "collaboration_panel": {
+    "button": false
+  },
+  "calls": {
+    "mute_on_join": true
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+
+  // ------------------------------------------------------
+  // Telemetry
+  // ------------------------------------------------------
   "telemetry": {
     "diagnostics": false,
     "metrics": false
-  },
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark"
   }
 }
