@@ -54,16 +54,79 @@
               "parallel_tool_calls": false,
               "prompt_cache_key": false
             }
+          },
+          {
+            "name": "claude-opus-45",
+            "max_tokens": 202752,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
           }
         ]
       }
     }
   },
   "agent": {
-    "default_profile": "minimal",
+    "always_allow_tool_actions": true,
+    "profiles": {
+      "ask": {
+        "name": "Ask",
+        "tools": {
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "thinking": true,
+          "web_search": true
+        }
+      },
+      "write": {
+        "name": "Write",
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        }
+      },
+      "research": {
+        "name": "Research",
+        "tools": {
+          "list_directory": true,
+          "grep": true,
+          "fetch": true,
+          "thinking": true,
+          "now": true,
+          "open": true,
+          "read_file": true,
+          "create_directory": false
+        }
+      }
+    },
     "default_model": {
       "provider": "Venice",
-      "model": "gemini-3-pro-preview"
+      "model": "claude-opus-45"
     },
     "dock": "left",
     "play_sound_when_agent_done": true,
