@@ -157,7 +157,7 @@
   // ------------------------------------------------------
   "tab_size": 2,
   "preferred_line_length": 100,
-  "soft_wrap": "preferred_line_length",
+  "soft_wrap": "editor_width",
   "use_smartcase_search": false,
   "auto_signature_help": true,
   "restore_on_startup": "none",
