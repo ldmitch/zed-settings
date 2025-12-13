@@ -10,6 +10,27 @@
   // ------------------------------------------------------
   // AI
   // ------------------------------------------------------
+  "context_servers": {
+    "kagimcp": {
+      "enabled": true,
+      "settings": {
+        "kagi_api_key": "KAGI_KEY",
+        "kagi_summarizer_engine": "agnes"
+      }
+    },
+    "mcp-server-brave-search": {
+      "enabled": true,
+      "settings": {
+        "brave_api_key": "BRAVE_KEY"
+      }
+    },
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "CONTEXT7_KEY"
+      }
+    }
+  },
   "language_models": {
     "openai_compatible": {
       "Venice": {
@@ -64,18 +85,52 @@
               "parallel_tool_calls": false,
               "prompt_cache_key": false
             }
+          },
+          {
+            "name": "openai-gpt-52",
+            "max_tokens": 262144,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
           }
         ]
       }
     }
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "default_profile": "ask",
+    "always_allow_tool_actions": false,
     "profiles": {
       "ask": {
+        "context_servers": {
+          "mcp-server-context7": {
+            "tools": {
+              "resolve-library-id": true,
+              "get-library-docs": true
+            }
+          },
+          "mcp-server-brave-search": {
+            "tools": {
+              "brave_web_search": true,
+              "brave_video_search": true,
+              "brave_summarizer": true,
+              "brave_news_search": true,
+              "brave_local_search": true,
+              "brave_image_search": true
+            }
+          },
+          "kagimcp": {
+            "tools": {
+              "kagi_summarizer": true
+            }
+          }
+        },
         "name": "Ask",
         "tools": {
-          "diagnostics": true,
+          "diagnostics": false,
           "fetch": true,
           "list_directory": true,
           "project_notifications": false,
@@ -85,10 +140,27 @@
           "open": true,
           "grep": true,
           "thinking": true,
-          "web_search": true
+          "web_search": false
         }
       },
       "write": {
+        "context_servers": {
+          "mcp-server-brave-search": {
+            "tools": {
+              "brave_video_search": false,
+              "brave_local_search": false,
+              "brave_image_search": false
+            }
+          },
+          "kagimcp": {
+            "tools": {
+              "kagi_search_fetch": false,
+              "kagi_fastgpt": false,
+              "kagi_enrich_web": false,
+              "kagi_enrich_news": false
+            }
+          }
+        },
         "name": "Write",
         "tools": {
           "copy_path": true,
@@ -107,26 +179,13 @@
           "grep": true,
           "terminal": true,
           "thinking": true,
-          "web_search": true
-        }
-      },
-      "research": {
-        "name": "Research",
-        "tools": {
-          "list_directory": true,
-          "grep": true,
-          "fetch": true,
-          "thinking": true,
-          "now": true,
-          "open": true,
-          "read_file": true,
-          "create_directory": false
+          "web_search": false
         }
       }
     },
     "default_model": {
       "provider": "Venice",
-      "model": "claude-opus-45"
+      "model": "openai-gpt-52"
     },
     "dock": "left",
     "play_sound_when_agent_done": true,
@@ -160,7 +219,6 @@
   "soft_wrap": "editor_width",
   "use_smartcase_search": false,
   "auto_signature_help": true,
-  "restore_on_startup": "none",
   "indent_guides": {
     "active_line_width": 3,
     "line_width": 1
@@ -184,6 +242,7 @@
   // ------------------------------------------------------
   "autosave": "on_focus_change",
   "format_on_save": "on",
+  "restore_on_startup": "last_session",
   "remove_trailing_whitespace_on_save": true,
   "ensure_final_newline_on_save": true,
 
