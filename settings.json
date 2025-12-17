@@ -14,22 +14,16 @@
     "kagimcp": {
       "enabled": true,
       "settings": {
-        "kagi_api_key": "KAGI_KEY",
-        "kagi_summarizer_engine": "agnes"
-      }
-    },
-    "mcp-server-brave-search": {
-      "enabled": true,
-      "settings": {
-        "brave_api_key": "BRAVE_KEY"
-      }
+        "kagi_api_key": "KAGI_API_KEY",
+        "kagi_summarizer_engine": "agnes",
+      },
     },
     "mcp-server-context7": {
       "enabled": true,
       "settings": {
-        "context7_api_key": "CONTEXT7_KEY"
-      }
-    }
+        "context7_api_key": "CONTEXT7_API_KEY",
+      },
+    },
   },
   "language_models": {
     "openai_compatible": {
@@ -43,18 +37,8 @@
               "tools": true,
               "images": true,
               "parallel_tool_calls": false,
-              "prompt_cache_key": false
-            }
-          },
-          {
-            "name": "gemini-3-pro-preview",
-            "max_tokens": 202752,
-            "capabilities": {
-              "tools": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false
-            }
+              "prompt_cache_key": false,
+            },
           },
           {
             "name": "kimi-k2-thinking",
@@ -63,18 +47,8 @@
               "tools": true,
               "images": false,
               "parallel_tool_calls": false,
-              "prompt_cache_key": false
-            }
-          },
-          {
-            "name": "zai-org-glm-4.6",
-            "max_tokens": 202752,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false
-            }
+              "prompt_cache_key": false,
+            },
           },
           {
             "name": "claude-opus-45",
@@ -83,8 +57,8 @@
               "tools": true,
               "images": true,
               "parallel_tool_calls": false,
-              "prompt_cache_key": false
-            }
+              "prompt_cache_key": false,
+            },
           },
           {
             "name": "openai-gpt-52",
@@ -93,12 +67,12 @@
               "tools": true,
               "images": true,
               "parallel_tool_calls": false,
-              "prompt_cache_key": false
-            }
-          }
-        ]
-      }
-    }
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+    },
   },
   "agent": {
     "default_profile": "ask",
@@ -109,24 +83,14 @@
           "mcp-server-context7": {
             "tools": {
               "resolve-library-id": true,
-              "get-library-docs": true
-            }
-          },
-          "mcp-server-brave-search": {
-            "tools": {
-              "brave_web_search": true,
-              "brave_video_search": true,
-              "brave_summarizer": true,
-              "brave_news_search": true,
-              "brave_local_search": true,
-              "brave_image_search": true
-            }
+              "get-library-docs": true,
+            },
           },
           "kagimcp": {
             "tools": {
-              "kagi_summarizer": true
-            }
-          }
+              "kagi_summarizer": true,
+            },
+          },
         },
         "name": "Ask",
         "tools": {
@@ -140,26 +104,26 @@
           "open": true,
           "grep": true,
           "thinking": true,
-          "web_search": false
-        }
+          "web_search": false,
+        },
       },
       "write": {
         "context_servers": {
-          "mcp-server-brave-search": {
+          "mcp-server-context7": {
             "tools": {
-              "brave_video_search": false,
-              "brave_local_search": false,
-              "brave_image_search": false
-            }
+              "resolve-library-id": true,
+              "get-library-docs": true,
+            },
           },
           "kagimcp": {
             "tools": {
-              "kagi_search_fetch": false,
-              "kagi_fastgpt": false,
+              "kagi_enrich_news": false,
               "kagi_enrich_web": false,
-              "kagi_enrich_news": false
-            }
-          }
+              "kagi_fastgpt": false,
+              "kagi_search_fetch": false,
+              "kagi_summarizer": true,
+            },
+          },
         },
         "name": "Write",
         "tools": {
@@ -179,20 +143,20 @@
           "grep": true,
           "terminal": true,
           "thinking": true,
-          "web_search": false
-        }
-      }
+          "web_search": false,
+        },
+      },
     },
     "default_model": {
       "provider": "Venice",
-      "model": "openai-gpt-52"
+      "model": "openai-gpt-52",
     },
     "dock": "left",
     "play_sound_when_agent_done": true,
-    "enable_feedback": false
+    "enable_feedback": false,
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
 
   // ------------------------------------------------------
@@ -201,14 +165,14 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Ayu Dark"
+    "dark": "Ayu Dark",
   },
   "icon_theme": "Zed (Default)",
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "buffer_line_height": "standard",
   "active_pane_modifiers": {
-    "inactive_opacity": 0.5
+    "inactive_opacity": 0.5,
   },
 
   // ------------------------------------------------------
@@ -221,20 +185,20 @@
   "auto_signature_help": true,
   "indent_guides": {
     "active_line_width": 3,
-    "line_width": 1
+    "line_width": 1,
   },
   "inlay_hints": {
-    "enabled": true
+    "enabled": true,
   },
   "gutter": {
-    "min_line_number_digits": 5
+    "min_line_number_digits": 5,
   },
   "scrollbar": {
     "show": "auto",
     "cursors": true,
     "git_diff": true,
     "search_results": true,
-    "diagnostics": "all"
+    "diagnostics": "all",
   },
 
   // ------------------------------------------------------
@@ -252,37 +216,37 @@
   "bottom_dock_layout": "contained",
   "tabs": {
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
   "tab_bar": {
     "show_nav_history_buttons": false,
-    "show": true
+    "show": true,
   },
   "title_bar": {
     "show_menus": true,
-    "show_branch_icon": true
+    "show_branch_icon": true,
   },
   "project_panel": {
     "entry_spacing": "standard",
     "default_width": 300.0,
-    "dock": "right"
+    "dock": "right",
   },
   "outline_panel": {
     "dock": "right",
-    "button": false
+    "button": false,
   },
   "notification_panel": {
     "default_width": 300.0,
-    "dock": "right"
+    "dock": "right",
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "calls": {
-    "mute_on_join": true
+    "mute_on_join": true,
   },
   "git_panel": {
-    "dock": "right"
+    "dock": "right",
   },
 
   // ------------------------------------------------------
@@ -290,6 +254,6 @@
   // ------------------------------------------------------
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
-  }
+    "metrics": false,
+  },
 }
