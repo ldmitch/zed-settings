@@ -11,17 +11,10 @@
   // AI
   // ------------------------------------------------------
   "context_servers": {
-    "kagimcp": {
-      "enabled": true,
-      "settings": {
-        "kagi_api_key": "KAGI_API_KEY",
-        "kagi_summarizer_engine": "agnes",
-      },
-    },
     "mcp-server-context7": {
       "enabled": true,
       "settings": {
-        "context7_api_key": "CONTEXT7_API_KEY",
+        "context7_api_key": "ctx7sk-63c1cf81-be32-41e1-ae79-5e9b415bd2e9",
       },
     },
   },
@@ -75,8 +68,8 @@
     },
   },
   "agent": {
-    "default_profile": "ask",
-    "always_allow_tool_actions": false,
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
     "profiles": {
       "ask": {
         "context_servers": {
@@ -84,11 +77,6 @@
             "tools": {
               "resolve-library-id": true,
               "get-library-docs": true,
-            },
-          },
-          "kagimcp": {
-            "tools": {
-              "kagi_summarizer": true,
             },
           },
         },
@@ -113,15 +101,6 @@
             "tools": {
               "resolve-library-id": true,
               "get-library-docs": true,
-            },
-          },
-          "kagimcp": {
-            "tools": {
-              "kagi_enrich_news": false,
-              "kagi_enrich_web": false,
-              "kagi_fastgpt": false,
-              "kagi_search_fetch": false,
-              "kagi_summarizer": true,
             },
           },
         },
@@ -149,7 +128,7 @@
     },
     "default_model": {
       "provider": "Venice",
-      "model": "openai-gpt-52",
+      "model": "claude-opus-45",
     },
     "dock": "left",
     "play_sound_when_agent_done": true,
