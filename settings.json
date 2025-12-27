@@ -14,7 +14,7 @@
     "mcp-server-context7": {
       "enabled": true,
       "settings": {
-        "context7_api_key": "ctx7sk-63c1cf81-be32-41e1-ae79-5e9b415bd2e9",
+        "context7_api_key": "CONTEXT7_API_KEY",
       },
     },
   },
